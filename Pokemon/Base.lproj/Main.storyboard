@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pokemon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,85 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lapras" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUU-ey-GEF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="U2A-RI-g9G"/>
+                                    <constraint firstAttribute="height" constant="38" id="vaf-uA-UBv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minValue="0.0" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="3WG-t8-zVl">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30.5" id="umc-I7-m7J"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7WI-uN-i1s"/>
+                                </connections>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lapras" translatesAutoresizingMaskIntoConstraints="NO" id="Uz0-eL-hg9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="387" id="r5z-bO-gds"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Show Picture!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS7-C5-Dij">
+                                <frame key="frameInset" minX="89" minY="198" width="196" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="Gjc-Hy-tbA"/>
+                                    <constraint firstAttribute="height" constant="20.5" id="ghT-EF-exg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uun-bx-Hvv">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Show Pokemon!">
+                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oco-gB-lZz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nS7-C5-Dij" firstAttribute="centerX" secondItem="hUU-ey-GEF" secondAttribute="centerX" id="5D6-Qi-usw"/>
+                            <constraint firstItem="Uz0-eL-hg9" firstAttribute="top" secondItem="nS7-C5-Dij" secondAttribute="bottom" constant="29" id="8nN-I5-l4N"/>
+                            <constraint firstItem="3WG-t8-zVl" firstAttribute="leading" secondItem="Uz0-eL-hg9" secondAttribute="leading" id="ATe-dZ-xfy"/>
+                            <constraint firstItem="nS7-C5-Dij" firstAttribute="top" secondItem="3WG-t8-zVl" secondAttribute="bottom" constant="51.5" id="CWO-pE-W7O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3WG-t8-zVl" secondAttribute="trailing" constant="2" id="HcO-Ma-zoU"/>
+                            <constraint firstItem="nS7-C5-Dij" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IcC-Wz-Ks5"/>
+                            <constraint firstItem="nS7-C5-Dij" firstAttribute="centerX" secondItem="Uz0-eL-hg9" secondAttribute="centerX" id="Kw3-Va-Fba"/>
+                            <constraint firstItem="Uz0-eL-hg9" firstAttribute="top" secondItem="Uun-bx-Hvv" secondAttribute="bottom" constant="24" id="L3l-hM-gic"/>
+                            <constraint firstItem="3WG-t8-zVl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="LPg-ys-zI2"/>
+                            <constraint firstItem="hUU-ey-GEF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ShG-Iv-1wa"/>
+                            <constraint firstItem="3WG-t8-zVl" firstAttribute="top" secondItem="hUU-ey-GEF" secondAttribute="bottom" constant="40" id="V5u-oO-vrj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uz0-eL-hg9" secondAttribute="bottom" constant="30" id="XfS-3y-5gI"/>
+                            <constraint firstItem="Uun-bx-Hvv" firstAttribute="top" secondItem="3WG-t8-zVl" secondAttribute="bottom" constant="41.5" id="Znb-ch-kwn"/>
+                            <constraint firstAttribute="trailing" secondItem="3WG-t8-zVl" secondAttribute="trailing" constant="18" id="bob-la-bne"/>
+                            <constraint firstItem="Uz0-eL-hg9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ccx-cl-bN4"/>
+                            <constraint firstItem="hUU-ey-GEF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="d0S-J0-qRc"/>
+                            <constraint firstItem="3WG-t8-zVl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gkT-33-vOw"/>
+                            <constraint firstItem="3WG-t8-zVl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="18" id="laT-Yy-nay"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uz0-eL-hg9" secondAttribute="bottom" constant="30" id="sKW-43-kT3"/>
+                            <constraint firstItem="nS7-C5-Dij" firstAttribute="centerX" secondItem="3WG-t8-zVl" secondAttribute="centerX" id="tyY-Wo-crC"/>
+                            <constraint firstItem="Uun-bx-Hvv" firstAttribute="centerX" secondItem="nS7-C5-Dij" secondAttribute="centerX" id="xFo-YN-nGW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Uz0-eL-hg9" id="P6E-9F-X2z"/>
+                        <outlet property="sliderLabel" destination="hUU-ey-GEF" id="hXj-cc-VgR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-928.79999999999995" y="-45.42728635682159"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lapras" width="666" height="733"/>
+    </resources>
 </document>
